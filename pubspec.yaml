@@ -1,0 +1,35 @@
+name: flutter_slds_icons
+description: A new Flutter package project.
+version: 0.0.1
+repository: https://github.com/mj12358/flutter-slds-icons
+
+environment:
+  sdk: ">=2.19.6 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  fonts:
+    - family: SLDSActionIcons
+      fonts:
+        - asset: lib/assets/SLDSActionIcons.ttf
+    - family: SLDSCustomIcons
+      fonts:
+        - asset: lib/assets/SLDSCustomIcons.ttf
+    - family: SLDSDoctypeIcons
+      fonts:
+        - asset: lib/assets/SLDSDoctypeIcons.ttf
+    - family: SLDSStandardIcons
+      fonts:
+        - asset: lib/assets/SLDSStandardIcons.ttf
+    - family: SLDSUtilityIcons
+      fonts:
+        - asset: lib/assets/SLDSUtilityIcons.ttf
