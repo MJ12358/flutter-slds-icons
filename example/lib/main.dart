@@ -14,6 +14,9 @@ class App extends StatelessWidget {
       title: 'Flutter SLDS Example',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        iconTheme: const IconThemeData(
+          color: Colors.blue,
+        ),
       ),
       home: Scaffold(
         appBar: AppBar(
@@ -30,12 +33,21 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Icon(
-        SLDSUtilityIcons.activity,
-        color: Colors.amber,
-        size: 300,
+    return GridView(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 5,
       ),
+      children: const [
+        Icon(SLDSIcons.account),
+        Icon(SLDSIcons.account_info),
+        Icon(SLDSIcons.action_list_component),
+        Icon(SLDSIcons.add_contact),
+        Icon(SLDSIcons.add_file),
+        Icon(SLDSIcons.audio),
+        Icon(SLDSIcons.csv),
+        Icon(SLDSIcons.custom1),
+        Icon(SLDSIcons.custom10),
+      ],
     );
   }
 }
