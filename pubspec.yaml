@@ -1,6 +1,6 @@
 name: flutter_slds_icons
 description: An icon pack derived from the Salesforce Lightning Design System icons.
-version: 0.0.2
+version: 1.0.0
 repository: https://github.com/mj12358/flutter-slds-icons
 
 environment:
