@@ -2,18 +2,12 @@
 
 import 'dart:io';
 
+import 'common.dart';
+
 final Uri _dirPath = Platform.script.resolve('../assets/parsed');
 final Uri _filePath = Platform.script.resolve('../example/lib/map.dart');
 final Directory _dir = Directory.fromUri(_dirPath);
 final File _file = File.fromUri(_filePath);
-final List<String> _reservedWords = <String>[
-  'case',
-  'default',
-  'new',
-  'switch',
-  'sync',
-  'filterList',
-];
 
 void main() {
   print('Begin Gen Map');
@@ -25,14 +19,19 @@ void main() {
 
   final Map<String, String> map = <String, String>{};
 
-  _dir.listSync(followLinks: false).forEach((f) {
-    if (f is File) {
-      final String displayName = f.displayName;
-      if (!_reservedWords.contains(displayName)) {
-        map['\'$displayName\''] = 'SLDSIcons.$displayName';
-      }
+  for (final FileSystemEntity f in _dir.listSync(followLinks: false)) {
+    if (f is! File) {
+      continue;
     }
-  });
+
+    final String displayName = f.displayName;
+
+    if (kReservedWords.contains(displayName)) {
+      continue;
+    }
+
+    map['\'$displayName\''] = 'SLDSIcons.$displayName';
+  }
 
   if (map.isEmpty) {
     print('No assets found in directory, please check and try again.');
@@ -47,24 +46,4 @@ void main() {
   _file.writeAsStringSync(result);
 
   print('End Gen Map');
-}
-
-extension on File {
-  String get name {
-    final String separator = Platform.pathSeparator;
-    final List<String> split = path.split(separator);
-    if (split.isEmpty) {
-      return '';
-    }
-    return split.last;
-  }
-
-  String get displayName {
-    final String name = this.name;
-    final int dot = name.lastIndexOf('.');
-    if (dot < 0 || dot + 1 >= name.length) {
-      return name;
-    }
-    return name.substring(0, dot);
-  }
 }

@@ -2,6 +2,8 @@
 
 import 'dart:io';
 
+import 'common.dart';
+
 final Uri _originalDirPath = Platform.script.resolve('../assets/original');
 final Uri _parsedDirPath = Platform.script.resolve('../assets/parsed');
 final Directory _originalDir = Directory.fromUri(_originalDirPath);
@@ -24,17 +26,36 @@ void main() {
 
   if (!_parsedDir.existsSync()) {
     _parsedDir.createSync();
+  } else {
+    _parsedDir.deleteSync(recursive: true);
+    _parsedDir.createSync();
   }
 
-  for (final String e in _contentList) {
-    final Uri dirPath = Uri.directory('${_originalDirPath.path}/$e');
+  for (final String c in _contentList) {
+    print(c);
+    final Uri dirPath = Platform.script.resolve('${_originalDirPath.path}/$c');
     final Directory dir = Directory.fromUri(dirPath);
 
-    dir.listSync().map((f) {
-      if (f is File) {
-        f.copySync(_parsedDir.path);
+    for (final FileSystemEntity f in dir.listSync(followLinks: false)) {
+      if (f is! File) {
+        continue;
       }
-    });
+
+      final String displayName = f.displayName;
+
+      if (kReservedWords.contains(displayName)) {
+        continue;
+      }
+
+      if (f.extension != 'svg') {
+        continue;
+      }
+
+      final Uri filePath =
+          Platform.script.resolve('${_parsedDir.path}/${f.name}');
+
+      f.copySync(filePath.toString());
+    }
   }
 
   print('End Copy Icons');
