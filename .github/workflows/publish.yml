@@ -10,7 +10,6 @@ jobs:
   publish:
 
     permissions:
-      contents: write
       id-token: write # Required for authentication using OIDC
     
     runs-on: ubuntu-latest
