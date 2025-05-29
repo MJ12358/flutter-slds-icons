@@ -30,7 +30,7 @@ void main() {
       continue;
     }
 
-    map['\'$displayName\''] = 'SLDSIcons.$displayName';
+    map["'$displayName'"] = 'SLDSIcons.$displayName';
   }
 
   if (map.isEmpty) {

@@ -8,7 +8,7 @@ part of flutter_slds_icons;
 class SLDSIcons {
   SLDSIcons._();
 
-  static const _kFontFam = 'SLDSIcons';
+  static const String _kFontFam = 'SLDSIcons';
   static const String _kFontPkg = 'flutter_slds_icons';
 
   static const IconData zoomout =

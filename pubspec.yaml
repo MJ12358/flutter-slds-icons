@@ -7,9 +7,12 @@ funding:
 topics:
   - flutter
   - icons
+  - salesforce
+  - slds
+  - sfdx
 
 environment:
-  sdk: ">=2.19.6 <4.0.0"
+  sdk: ">=3.0.0 <4.0.0"
   flutter: ">=3.3.0"
 
 dependencies:
@@ -17,9 +20,9 @@ dependencies:
     sdk: flutter
 
 dev_dependencies:
+  dart_lintz: 1.2.3
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.3
 
 flutter:
   fonts:
