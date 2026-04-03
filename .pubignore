@@ -8,3 +8,5 @@ ios/
 web/
 screenshots/
 scripts/
+assets/original
+assets/parsed
