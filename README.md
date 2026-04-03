@@ -1,5 +1,7 @@
 # Flutter SLDS Icons
 
+![pub package](https://img.shields.io/pub/v/flutter_slds_icons)
+
 [Salesforce Lightning Design System](https://www.lightningdesignsystem.com/icons/) Icons for Flutter!
 
 ## Documentation

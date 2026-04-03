@@ -1,4 +1,10 @@
-/android
-/assets
-/ios
-/scripts
+.dart_tool/
+.github/
+.idea/
+.vscode/
+android/
+build/
+ios/
+web/
+screenshots/
+scripts/

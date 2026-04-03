@@ -1,5 +1,13 @@
 # SLDS Icons
 
+## [2.0.1]
+
+- Add thumbnail to pub.dev.
+- Update pubignore.
+- Update readme.
+- Update dependencies.
+- Update example.
+
 ## [2.0.0]
 
 - Update dependencies.
