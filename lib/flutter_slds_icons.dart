@@ -1,4 +1,4 @@
-library flutter_slds_icons;
+library;
 
 import 'package:flutter/widgets.dart';
 
