@@ -1,6 +1,6 @@
 # SLDS Icons
 
-## [2.0.3]
+## [2.0.4]
 
 - Fix static analysis.
 - Update analysis options.
