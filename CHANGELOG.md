@@ -1,5 +1,12 @@
 # SLDS Icons
 
+## [2.0.3]
+
+- Fix static analysis.
+- Update analysis options.
+- Update example app.
+- Update dependencies.
+
 ## [2.0.2]
 
 - Update pubignore.
